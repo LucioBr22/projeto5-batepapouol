@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <title>projeto5-batepapouol</title>
+</head>
+<body>
+    <div class="barra-superior">
+        <img class="logo" src="images/logo.jpg" alt="logo">
+        <ion-icon class='contatos' name="people"></ion-icon>
+    </div>
+    <div class="conversas">
+    </div>
+    <div class="barra-inferior">
+        <div class="caixa-texto">
+            <input class="texto-enviado" placeholder="Escreva aqui..." type="text">
+            <ion-icon onclick="enviarMensagem()" class="enviar" name="paper-plane-outline"></ion-icon>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
