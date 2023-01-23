@@ -22,6 +22,8 @@ function testeDeUsuario(resposta){
         }
     }
 
+    conectando();
+
 }   
 
 testarNomeUsuario();
@@ -37,9 +39,6 @@ function respostaChegou(){
     buscarMensagem();
 
 }
-
-
-conectando();
 
 function statusDoUsuario(){
     const status = axios.post('https://mock-api.driven.com.br/api/v6/uol/status', lista);
@@ -77,10 +76,6 @@ function mensagensChegaram(resposta){
 }
 
 const recarregarMensagens = setInterval(buscarMensagem,mensagensChegaram, 3000);
-
-function deuErroMensagens(erro){
-
-}
 
 let mensagem;
 
