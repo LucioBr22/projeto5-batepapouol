@@ -35,16 +35,18 @@ function conectando(){
 }
 
 function respostaChegou(){
+
+    setInterval(statusDoUsuario,5000);
     
     buscarMensagem();
+
+    setInterval(buscarMensagem,mensagensChegaram, 3000);
 
 }
 
 function statusDoUsuario(){
     const status = axios.post('https://mock-api.driven.com.br/api/v6/uol/status', lista);
 }
-
-const statusUsuario = setInterval(statusDoUsuario,5000);
 
 function buscarMensagem(){
 
@@ -69,7 +71,7 @@ function mensagensChegaram(resposta){
             </div>`;            
         }else if(todasMensagens[i].type === 'message'){
             corpoDasMensagens.innerHTML = corpoDasMensagens.innerHTML + `<div data-test="message" class ='mensagem-todos'>
-            <span class='horario'>(${todasMensagens[i].time})</span> <span class='usuario'>${todasMensagens[i].from}</span> para <span class='usuario'>${todasMensagens[i].to}</span>:  <span>${todasMensagens[i].text}</span>
+            <span class='horario'>(${todasMensagens[i].time})</span><span class='usuario'>${todasMensagens[i].from}</span> para <span class='usuario'>${todasMensagens[i].to}</span>:  <span>${todasMensagens[i].text}</span>
             </div>`;
         }else if(todasMensagens[i].type === 'private_message' && (nome === todasMensagens[i].to || nome === todasMensagens[i].from)) {  
             corpoDasMensagens.innerHTML = corpoDasMensagens.innerHTML + `<div data-test="message" class ='mensagem-reservada'>
@@ -81,8 +83,6 @@ function mensagensChegaram(resposta){
     }
 
 }
-
-const recarregarMensagens = setInterval(buscarMensagem,mensagensChegaram, 3000);
 
 let mensagem;
 
