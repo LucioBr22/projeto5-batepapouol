@@ -7,7 +7,7 @@ const lista = {
 function conectando(){
     const promessa = axios.post("https://mock-api.driven.com.br/api/v6/uol/participants",lista);
     promessa.then(respostaChegou);
-    promessa.catch(deu);
+    promessa.catch(deuRuim);
 }
 
 function respostaChegou(){
