@@ -70,10 +70,8 @@ body{
     padding-right: 8px;
     padding-top: 10px;
     padding-bottom: 10px; 
-    display: flex;
-    align-items: center;
     width: 375px;
-    background: #DCDCDC;
+    background-color: #DCDCDC;
     border-radius: 2px;
     height: auto;
     margin-bottom: 4px;
@@ -83,10 +81,8 @@ body{
     padding-right: 8px;
     padding-top: 10px;
     padding-bottom: 10px; 
-    display: flex;
-    align-items: center;
     width: 375px;
-    background: #FFFFFF;
+    background-color: #FFFFFF;
     border-radius: 2px;
     height: auto;
     margin-bottom: 4px;
@@ -96,10 +92,8 @@ body{
     padding-right: 8px;
     padding-top: 10px;
     padding-bottom: 10px; 
-    display: flex;
-    align-items: center;
     width: 375px;
-    background: #FFDEDE;
+    background-color: #FFDEDE;
     height: auto;
     margin-bottom: 4px;
     border-radius: 2px;

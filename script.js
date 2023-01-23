@@ -64,11 +64,17 @@ function mensagensChegaram(resposta){
 
     for(let i=0;i<todasMensagens.length;i++){
         if(todasMensagens[i].type === 'status'){
-            corpoDasMensagens.innerHTML = corpoDasMensagens.innerHTML + `<div data-test="message" class ='entrada-saida'><p><span class='horario'>(${todasMensagens[i].time})</span><span class='usuario'>  ${todasMensagens[i].from}</span> para <span class='usuario'>${todasMensagens[i].to}</span>:  <span>${todasMensagens[i].text}</span></p></div>`;            
+            corpoDasMensagens.innerHTML = corpoDasMensagens.innerHTML + `<div data-test="message" class ='entrada-saida'>
+            <span class='horario'>(${todasMensagens[i].time}) </span><span class='usuario'>${todasMensagens[i].from}</span> para <span class='usuario'>${todasMensagens[i].to}</span>:  <span>${todasMensagens[i].text}</span>
+            </div>`;            
         }else if(todasMensagens[i].type === 'message'){
-            corpoDasMensagens.innerHTML = corpoDasMensagens.innerHTML + `<div data-test="message" class ='mensagem-todos'><p><span class='horario'>(${todasMensagens[i].time})</span><span class='usuario'>  ${todasMensagens[i].from}</span> para <span class='usuario'>${todasMensagens[i].to}</span>:  <span>${todasMensagens[i].text}</span></p></div>`;
+            corpoDasMensagens.innerHTML = corpoDasMensagens.innerHTML + `<div data-test="message" class ='mensagem-todos'>
+            <span class='horario'>(${todasMensagens[i].time})</span> <span class='usuario'>${todasMensagens[i].from}</span> para <span class='usuario'>${todasMensagens[i].to}</span>:  <span>${todasMensagens[i].text}</span>
+            </div>`;
         }else if(todasMensagens[i].type === 'private_message' && (nome === todasMensagens[i].to || nome === todasMensagens[i].from)) {  
-            corpoDasMensagens.innerHTML = corpoDasMensagens.innerHTML + `<div data-test="message" class ='mensagem-reservada'><p><span class='horario'>(${todasMensagens[i].time})</span><span class='usuario'>  ${todasMensagens[i].from}</span> reservadamente para <span class='usuario'>${todasMensagens[i].to}</span>:  <span>${todasMensagens[i].text}</span></p></div>`;
+            corpoDasMensagens.innerHTML = corpoDasMensagens.innerHTML + `<div data-test="message" class ='mensagem-reservada'>
+            <span class='horario'>(${todasMensagens[i].time}) </span><span class='usuario'>${todasMensagens[i].from}</span> reservadamente para <span class='usuario'>${todasMensagens[i].to}</span>:  <span>${todasMensagens[i].text}</span>
+            </div>`;
         }
         
         corpoDasMensagens.lastChild.scrollIntoView(); 
