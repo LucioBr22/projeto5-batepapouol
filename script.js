@@ -1,13 +1,35 @@
 const nome = prompt('Qual o seu nome de usuário?');
 
-const lista = {
+let lista = {
     'name':nome
 };
+
+function testarNomeUsuario(){
+
+    const testeUsuario = axios.get("https://mock-api.driven.com.br/api/v6/uol/participants");
+    testeUsuario.then(testeDeUsuario);
+}
+
+function testeDeUsuario(resposta){
+
+    let nomesDeUsuario = resposta.data;
+    let primeiroUsuario;
+
+    for(let i=0;i<nomesDeUsuario.length;i++){
+        primeiroUsuario = nomesDeUsuario[i].name;
+        if(primeiroUsuario === nome){
+            document.location.reload(true);
+        }
+    }
+
+}   
+
+testarNomeUsuario();
+
 
 function conectando(){
     const promessa = axios.post("https://mock-api.driven.com.br/api/v6/uol/participants",lista);
     promessa.then(respostaChegou);
-    promessa.catch(deuRuim);
 }
 
 function respostaChegou(){
@@ -16,15 +38,6 @@ function respostaChegou(){
 
 }
 
-function deuRuim(erro){
-
-    const erroDoUsuario = erro.response.status;
-
-    if(erroDoUsuario === 400){
-        document.location.reload(true);
-    }
-    
-}
 
 conectando();
 
@@ -88,11 +101,14 @@ function enviarMensagem(){
 
     const enviarMensagem = axios.post("https://mock-api.driven.com.br/api/v6/uol/messages",mensagemEnviada);
     enviarMensagem.then(deuCertoMensagem);
-    enviarMensagem.catch();
+    enviarMensagem.catch(deuErradoEnviarMensagem);
 
 }
 
 function deuCertoMensagem(){
-    
     buscarMensagem();
+}
+
+function deuErradoEnviarMensagem(){
+    window.location.reload();
 }
