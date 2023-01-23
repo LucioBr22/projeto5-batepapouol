@@ -27,6 +27,8 @@ function deuRuim(erro){
 
 conectando();
 
+buscarMensagem();
+
 function statusDoUsuario(){
     const status = axios.post('https://mock-api.driven.com.br/api/v6/uol/status', lista);
 }
