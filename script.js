@@ -23,6 +23,7 @@ function deuRuim(erro){
     if(erroDoUsuario === 400){
         document.location.reload(true);
     }
+    
 }
 
 conectando();
@@ -51,11 +52,11 @@ function mensagensChegaram(resposta){
 
     for(let i=0;i<todasMensagens.length;i++){
         if(todasMensagens[i].text === 'entra na sala...' || todasMensagens[i].text === 'sai da sala...'){
-            corpoDasMensagens.innerHTML = corpoDasMensagens.innerHTML + `<div data-test='message' class ='entrada-saida'><p><span class='horario'>(${todasMensagens[i].time})</span><span class='usuario'>  ${todasMensagens[i].from}</span> para <span class='usuario'>${todasMensagens[i].to}</span>:  <span>${todasMensagens[i].text}</span></p></div>`;            
+            corpoDasMensagens.innerHTML = corpoDasMensagens.innerHTML + `<div data-test="message" class ='entrada-saida'><p><span class='horario'>(${todasMensagens[i].time})</span><span class='usuario'>  ${todasMensagens[i].from}</span> para <span class='usuario'>${todasMensagens[i].to}</span>:  <span>${todasMensagens[i].text}</span></p></div>`;            
         }else if(todasMensagens[i].to === 'Todos'){
-            corpoDasMensagens.innerHTML = corpoDasMensagens.innerHTML + `<div data-test='message' class ='mensagem-todos'><p><span class='horario'>(${todasMensagens[i].time})</span><span class='usuario'>  ${todasMensagens[i].from}</span> para <span class='usuario'>${todasMensagens[i].to}</span>:  <span>${todasMensagens[i].text}</span></p></div>`;
-        }else{
-            corpoDasMensagens.innerHTML = corpoDasMensagens.innerHTML + `<div data-test='message' class ='mensagem-reservada'><p><span class='horario'>(${todasMensagens[i].time})</span><span class='usuario'>  ${todasMensagens[i].from}</span> reservadamente para <span class='usuario'>${todasMensagens[i].to}</span>:  <span>${todasMensagens[i].text}</span></p></div>`;
+            corpoDasMensagens.innerHTML = corpoDasMensagens.innerHTML + `<div data-test="message" class ='mensagem-todos'><p><span class='horario'>(${todasMensagens[i].time})</span><span class='usuario'>  ${todasMensagens[i].from}</span> para <span class='usuario'>${todasMensagens[i].to}</span>:  <span>${todasMensagens[i].text}</span></p></div>`;
+        }else{  
+            corpoDasMensagens.innerHTML = corpoDasMensagens.innerHTML + `<div data-test="message" class ='mensagem-reservada'><p><span class='horario'>(${todasMensagens[i].time})</span><span class='usuario'>  ${todasMensagens[i].from}</span> reservadamente para <span class='usuario'>${todasMensagens[i].to}</span>:  <span>${todasMensagens[i].text}</span></p></div>`;
         }
         corpoDasMensagens.lastChild.scrollIntoView(); 
     }
