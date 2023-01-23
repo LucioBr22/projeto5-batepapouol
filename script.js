@@ -10,8 +10,6 @@ function conectando(){
     promessa.catch(deuRuim);
 }
 
-conectando();
-
 function respostaChegou(){
     
     buscarMensagem();
@@ -26,6 +24,8 @@ function deuRuim(erro){
         document.location.reload(true);
     }
 }
+
+conectando();
 
 function statusDoUsuario(){
     const status = axios.post('https://mock-api.driven.com.br/api/v6/uol/status', lista);
@@ -92,6 +92,6 @@ function enviarMensagem(){
 }
 
 function deuCertoMensagem(){
-
+    
     buscarMensagem();
 }
