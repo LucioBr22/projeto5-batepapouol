@@ -6,10 +6,9 @@ const lista = {
 
 function conectando(){
     const promessa = axios.post("https://mock-api.driven.com.br/api/v6/uol/participants",lista);
-}
+    promessa.then(respostaChegou);
+    promessa.catch(deuRuim);
 
-function respostaChegou(resposta){
-    
 }
 
 function deuRuim(erro){
@@ -28,8 +27,6 @@ function statusDoUsuario(){
 }
 
 const statusUsuario = setInterval(statusDoUsuario,5000);
-
-buscarMensagem();
 
 function buscarMensagem(){
 
