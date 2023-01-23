@@ -66,15 +66,15 @@ function mensagensChegaram(resposta){
 
     for(let i=0;i<todasMensagens.length;i++){
         if(todasMensagens[i].type === 'status'){
-            corpoDasMensagens.innerHTML = corpoDasMensagens.innerHTML + `<div class ='entrada-saida' data-test="message">
+            corpoDasMensagens.innerHTML = corpoDasMensagens.innerHTML + `<div class ='entrada-saida cinza' data-test="message">
             <span class='horario'>(${todasMensagens[i].time}) </span><span class='usuario'>${todasMensagens[i].from}</span> para <span class='usuario'>${todasMensagens[i].to}</span>:  <span>${todasMensagens[i].text}</span>
             </div>`;            
         }else if(todasMensagens[i].type === 'message'){ 
-            corpoDasMensagens.innerHTML = corpoDasMensagens.innerHTML + `<div class ='mensagem-todos' data-test="message">
+            corpoDasMensagens.innerHTML = corpoDasMensagens.innerHTML + `<div class ='mensagem-todos branca' data-test="message">
             <span class='horario'>(${todasMensagens[i].time}) </span><span class='usuario'>${todasMensagens[i].from}</span> para <span class='usuario'>${todasMensagens[i].to}</span>:  <span>${todasMensagens[i].text}</span>
             </div>`;
         }else if(todasMensagens[i].type === 'private_message' && (nome === todasMensagens[i].to || nome === todasMensagens[i].from)) {  
-            corpoDasMensagens.innerHTML = corpoDasMensagens.innerHTML + `<div class ='mensagem-reservada' data-test="message">
+            corpoDasMensagens.innerHTML = corpoDasMensagens.innerHTML + `<div class ='mensagem-reservada rosa' data-test="message">
             <span class='horario'>(${todasMensagens[i].time}) </span><span class='usuario'>${todasMensagens[i].from}</span> reservadamente para <span class='usuario'>${todasMensagens[i].to}</span>:  <span>${todasMensagens[i].text}</span>
             </div>`;
         }
