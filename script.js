@@ -68,7 +68,7 @@ function mensagensChegaram(resposta){
         }else if(todasMensagens[i].to === 'Todos'){
             corpoDasMensagens.innerHTML = corpoDasMensagens.innerHTML + `<div data-test="message" class ='mensagem-todos'><p><span class='horario'>(${todasMensagens[i].time})</span><span class='usuario'>  ${todasMensagens[i].from}</span> para <span class='usuario'>${todasMensagens[i].to}</span>:  <span>${todasMensagens[i].text}</span></p></div>`;
         }else{  
-            corpoDasMensagens.innerHTML = corpoDasMensagens.innerHTML + `<div data-test="message" class ='mensagem-reservada'><p><span class='horario'>(${todasMensagens[i].time})</span><span class='usuario'>  ${todasMensagens[i].from}</span> reservadamente para <span class='usuario'>${todasMensagens[i].to}</span>:  <span>${todasMensagens[i].text}</span></p></div>`;
+            i++;
         }
         corpoDasMensagens.lastChild.scrollIntoView(); 
     }
